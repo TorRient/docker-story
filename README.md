@@ -18,32 +18,32 @@
 
 ### Create Namespaces with `unshare`
 `
-✅ bash namespace.sh
+bash namespace.sh
 `
 
 ### Create Cgroups with `cgcreate`
 `
-✅ bash cgroups.sh
+bash cgroups.sh
 `
 
 ### Create Container with Namespace + Cgroups
 `
-✅ bash create_container_ns_cgroups.sh
+bash create_container_ns_cgroups.sh
 `
 
 ### Create Container with Low-level container runtime: runc
 `
-✅ bash create_container_runc.sh
+bash create_container_runc.sh
 `
 
 ### Usage High-level container runtime: containerd
 `
-✅ bash containerd.sh
+bash containerd.sh
 `
 
 ### Docker build + deploy: Link test: locahost:8080
 `
-✅ bash run_docker.sh
+bash run_docker.sh
 `
 
 ### Docker-compose
@@ -57,9 +57,9 @@ locahost:8080 - test loadbalancer service
 locahost:8080/db - test connect MySQL
 
 `
-✅ cd docker-compose-demo
+cd docker-compose-demo
 `
 
 `
-✅ docker-compose up
+docker-compose up
 `
