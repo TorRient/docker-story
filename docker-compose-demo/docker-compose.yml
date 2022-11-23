@@ -1,0 +1,44 @@
+version: "3.7"
+services:
+  # Define APP1
+  app1:
+    build: ./app1 # Path to folder app1
+    container_name: app1
+    restart: always
+    environment:
+      - APP_NAME=APP1
+    expose:
+      - 5000
+    depends_on:
+      - db
+  # Define APP2
+  app2:
+    build: ./app2 # Path to folder app2
+    container_name: app2
+    restart: always
+    environment:
+      - APP_NAME=APP2
+    expose:
+      - 5000
+    depends_on:
+      - db
+  # Define NGINX
+  nginx:
+    build: ./nginx # Path to folder nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "8000:80"
+  # Define MYSQL
+  db:
+    image: mysql # Pull Image MySQL from DockerHub
+    ports:
+      - "32000:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+
+
+
+      
